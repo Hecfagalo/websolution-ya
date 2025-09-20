@@ -1,12 +1,25 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React</title>
+    <title>WebSolutions</title>
   </head>
   <body>
+    <!--
+      Hidden static form: Netlify necesita ver el formulario en archivos HTML en build time.
+      Esto permite que Netlify registre el formulario aunque tu formulario real esté renderizado por React.
+      No es visible al usuario.
+    -->
+    <div style="display:none;">
+      <form name="contact" netlify netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="contact" />
+        <input name="nombre" />
+        <input name="email" />
+        <textarea name="mensaje"></textarea>
+      </form>
+    </div>
+
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
